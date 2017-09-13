@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="api.resource" class="Dunglas\ApiBundle\Api\Resource" public="false" abstract="true" lazy="true" />
+
+        <service id="api.resource_collection" class="Dunglas\ApiBundle\Api\ResourceCollection" lazy="true" />
+
+        <service id="api.data_provider" class="Dunglas\ApiBundle\Model\DataProviderChain" lazy="true" />
+
+        <service id="api.operation_factory" class="Dunglas\ApiBundle\Api\Operation\OperationFactory" public="false" />
+
+        <service id="api.route_loader" class="Dunglas\ApiBundle\Routing\ApiLoader" public="false">
+            <argument type="service" id="api.resource_collection" />
+            <argument type="service" id="kernel" />
+
+            <tag name="routing.loader" />
+        </service>
+
+        <service id="api.router" class="Dunglas\ApiBundle\Routing\Router" public="false">
+            <argument type="service" id="router" />
+        </service>
+
+        <service id="api.iri_converter" class="Dunglas\ApiBundle\Api\IriConverter" public="false">
+            <argument type="service" id="api.resource_collection" />
+            <argument type="service" id="api.data_provider" />
+            <argument type="service" id="api.mapping.class_metadata_factory" />
+            <argument type="service" id="api.router" />
+            <argument type="service" id="property_accessor" />
+        </service>
+    </services>
+
+</container>

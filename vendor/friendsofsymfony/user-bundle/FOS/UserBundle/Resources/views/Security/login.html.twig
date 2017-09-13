@@ -1,0 +1,47 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+	<div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);">SYS-<b>{{ name_system|upper }}</b></a>
+            <small>SGCD - EBPF</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                <form id="sign_in" method="POST" action="{{ path("fos_user_security_check") }}">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <div class="msg"><b>Connectez vous pour commencer votre session</b></div>
+                    {% if error %}
+                        <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+                    {% endif %}
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required autocomplete="off" autofocus placeholder="Votre identifiant">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" id="password" name="_password" required placeholder="Votre mot de passe">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 p-t-5">
+                            <input type="checkbox" class="filled-in chk-col-grey" id="remember_me" name="_remember_me" checked>
+                            <label for="rememberme">Se rappeler de moi</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-grey waves-effect" type="submit">Connexion</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock fos_user_content %}

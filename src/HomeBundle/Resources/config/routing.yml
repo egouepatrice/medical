@@ -1,0 +1,11 @@
+home_bundle:
+    path:     /
+    defaults: { _controller: HomeBundle:Default:index }
+
+clinique_patient:
+    resource: "@CliniquePatientBundle/Resources/config/routing.yml"
+    prefix:   /clinique/patient
+
+admin_administration:
+    resource: "@AdminAdministrationBundle/Resources/config/routing.yml"
+    prefix:   /administration

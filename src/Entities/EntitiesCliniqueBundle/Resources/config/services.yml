@@ -1,0 +1,25 @@
+#services:
+#    entities_entities_clinique.example:
+#        class: Entities\EntitiesCliniqueBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+services:
+    resource.allergie:
+        parent:    "api.resource"
+        arguments: [ Entities\EntitiesCliniqueBundle\Entity\GespaAllergie ]
+        tags:      [ { name: "api.resource" } ]
+    
+    resource.correspondant:
+        parent:    "api.resource"
+        arguments: [ Entities\EntitiesCliniqueBundle\Entity\GespaCorrespondant ]
+        tags:      [ { name: "api.resource" } ]
+    
+    resource.famille:
+        parent:    "api.resource"
+        arguments: [ Entities\EntitiesCliniqueBundle\Entity\GespaFamille ]
+        tags:      [ { name: "api.resource" } ]
+
+    resource.patient:
+        parent:    "api.resource"
+        arguments: [ Entities\EntitiesCliniqueBundle\Entity\GespaPatient ]
+        tags:      [ { name: "api.resource" } ]

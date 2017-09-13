@@ -1,0 +1,3 @@
+entities_entities_admin_homepage:
+    path:     /
+    defaults: { _controller: EntitiesEntitiesAdminBundle:Default:index }

@@ -1,0 +1,11 @@
+services:
+    resource.cabinet:
+        parent:    "api.resource"
+        arguments: [ Entities\EntitiesAdminBundle\Entity\Cabinet ]
+        tags:      [ { name: "api.resource" } ]
+
+services:
+    resource.employe:
+        parent:    "api.resource"
+        arguments: [ Entities\EntitiesAdminBundle\Entity\Employe ]
+        tags:      [ { name: "api.resource" } ]

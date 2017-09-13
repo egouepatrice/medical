@@ -1,0 +1,3 @@
+entities_entities_clinique_homepage:
+    path:     /
+    defaults: { _controller: EntitiesEntitiesCliniqueBundle:Default:index }
