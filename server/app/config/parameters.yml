@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: gesdent
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: egouepatrice@gmail.com
+    mailer_password: null
+    secret: b967f2c466dfc0c33b5e6c039270455da2fe6f4c
+    cors_allow_origin: null
+    name_system: gesdent
